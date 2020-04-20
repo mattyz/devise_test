@@ -15,13 +15,13 @@
      <div class="container">
        <p class="navbar-text navbar-right">
          <% if user_signed_in? %>
-         <%= link_to 'New Article', new_article_path %>
+           <%= link_to 'New Article', new_article_path %>
          <% else %>
-         <%= link_to 'Login', new_user_session_path %>
+           <%= link_to 'Login', new_user_session_path %>
          <% end %>
 	</p>
       </div>
     </nav>
-   <%= yield %>
+  <%= yield %>
   </body>
 </html>
