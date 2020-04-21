@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @articles = Article.where(category_id: @category.id)
+      @articles = Article.where(category_id: @category_id)
     end
   end
 
@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params.merge(user: current_user))
+    @article.category_id = article_params[:category_id]
 
     respond_to do |format|
       if @article.save
