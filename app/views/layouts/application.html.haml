@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Wiki
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => root_path} Wiki
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li= link_to "New Article", new_article_path, class: 'navbar-link'
+              %li= link_to "Sign out", destroy_user_session_path, :method => :delete
+            - else
+              %li= link_to "Sign Up", new_user_registration_path
+              %li= link_to "Sign In", new_user_session_path
+        / /.navbar-collapse
+      / /.container-fluid
+    .container
+      .row
+        .col-lg-10
+          = yield
+        .col-lg-2
+          %ul.nav.nav-pills.nav-stacked
+            %li= link_to 'All Categories', root_path
+            - Category.all.each do |cat|
+              %li
+                = link_to cat.name, articles_path(category: cat.name)

@@ -1,0 +1,9 @@
+%p#notice= notice
+- @articles.each do |article|
+  %h2= link_to article.title, article
+  %p= truncate(article.body,lenth: 200)
+%br/
+- if user_signed_in?
+  = link_to 'New Article', new_article_path
+- else
+  = link_to 'Sign In', root_path
