@@ -1,14 +1,14 @@
 %style{:media => "screen"}
   :cdata
     img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 100px;
     }
 %p#notice= notice
 %p
 %h1= @article.title
 %p
-  = image_tag @article.image_url, align: 'right'
+  = image_tag @article.image_url, size: '200x200', align: 'right'
   = @article.body
 - if user_signed_in?
   = link_to 'Edit', edit_article_path(@article)
