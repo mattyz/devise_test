@@ -17,9 +17,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => root_path} Wiki
+              %a.navbar-brand{:href => root_path} Wiki 4 You
+
         / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        / JS not loaded or firing so the below line is missing..move it up
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse-1
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li= link_to "New Article", new_article_path, class: 'navbar-link'

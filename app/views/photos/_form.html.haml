@@ -1,0 +1,5 @@
+%form{:action => "/photos", :enctype => "multipart/form-data", :method => "post"}
+  %input{:name => "photo[image]", :type => "hidden", :value => "#{@photo.cached_image_data}"}/
+  %input{:name => "photo[image] ", :type => "file"}/
+  %input{:type => "submit", :value => "Create"}/
+
