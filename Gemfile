@@ -28,7 +28,7 @@ gem 'image_processing', '~> 1.10'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
-gem 'shrine', '~>3.2'
+gem 'shrine', '~>3.3'
 gem "haml-rails", "~>2.0"
 
 group :development, :test do

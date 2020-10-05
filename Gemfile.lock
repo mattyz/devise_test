@@ -82,7 +82,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    down (5.1.1)
+    down (5.2.0)
       addressable (~> 2.5)
     erubi (1.9.0)
     erubis (2.7.0)
@@ -133,7 +133,7 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    public_suffix (4.0.1)
+    public_suffix (4.0.6)
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -195,7 +195,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     sexp_processor (4.14.1)
-    shrine (3.2.1)
+    shrine (3.3.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
     spring (2.1.0)
@@ -257,7 +257,7 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
   selenium-webdriver
-  shrine (~> 3.2)
+  shrine (~> 3.3)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
